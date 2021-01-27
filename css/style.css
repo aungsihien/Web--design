@@ -1,0 +1,62 @@
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #18454a;
+        }
+        .main{
+            width: 260px;
+            border: 1px solid black;
+            margin: 50px auto;
+            background-color: #212121;
+        }
+        .key{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 10px;
+            background-color: #343434;
+            color: white;
+            user-select: none;
+            cursor:pointer;
+        }
+        .key:active{
+            background-color: #02bebd;
+        }
+        .keypad{
+            margin-left:4px;
+        }
+        .innerDisplay{
+            text-align: right;
+            /* padding: 10px; */
+            /* margin-bottom: 10px; */
+            background-color: #2b292a;
+            height: 150px;
+            padding-top: 80px;
+            padding-right: 10px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .color{
+            background-color: #05a0a6;
+        }
+        .keypad-table tr:first-child .key{
+            background-color: #1a404b;
+        }
+        .keypad-table tr td:last-child .key{
+            background-color: #1a404b;
+        }
+        .keypad-table tr:first-child .key:active{
+            background-color:  #02bebd;
+        }
+        .keypad-table tr td:last-child .key:active{
+            background-color:  #02bebd;
+        }
+    

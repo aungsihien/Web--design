@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+</head>
+<body>
+    <script src="js/app.js"></script>
+
+    <div class="main">
+        <div class="innerDisplay" id="innerDisplay">
+            0
+        </div>
+        
+        <div class="keypad">
+            <table class="keypad-table">
+                <tr>
+                    <td>
+                        <div class="key" onclick="deleteList()">C</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist('%')">%</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist('/')" >&#247;</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist('*')">x</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="key" id="key" onclick="addlist(7)">7</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist(8)">8</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist(9)">9</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist('-')">-</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="key" id="key" onclick="addlist(4)" >4</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist(5)"> 5</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist(6)">6</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist('+')">+</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="key" id="key" onclick="addlist(1)">1</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist(2)">2</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist(3)">3</div>
+                    </td>
+                    <td rowspan="2">
+                        <div class="key color size" style="height:110px"  onclick="calculate()">=</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="key" id="key" onclick="addlist(0)">0</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="addlist('.')">.</div>
+                    </td>
+                    <td>
+                        <div class="key" id="key" onclick="deleteAll()">AC</div>
+                    </td>
+                   
+                </tr>
+            </table>
+        </div>
+    </div>
+<script>
+   let display =  document.getElementById("innerDisplay");
+let arr = ["+" , "-" ,"*","/",".","%"];
+function addlist(x){
+    let current = display.innerHTML;
+    let lastId = current[current.length-1];
+    if(display.innerHTML == 0){
+       return display.innerHTML = x;
+    }else if(arr.includes(x) && arr.includes(lastId)){
+        return display.innerHTML = current.substring(0 , current.length-1)+x;
+    }else if(current.length >14){
+        alert("Pls enter less than 14 number only");
+        return display.innerHTML = 0;
+    }
+   return display.innerHTML += x;
+}
+
+function calculate(){
+     let current = display.innerHTML;
+     display.innerHTML = eval(current);
+}  
+function deleteAll(){
+    display.innerHTML = 0;
+} 
+function deleteList(){
+    let current= display.innerHTML;
+    display.innerHTML = current.substring(0, current.length-1);
+}
+
+console.log("aungsihein")
+</script>
+
+    
+</body>
+</html>
